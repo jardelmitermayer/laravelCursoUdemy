@@ -29,7 +29,15 @@ class ClienteControlador extends Controller
     {
         // listar, GET
         $clientes = session('clientes');
-        return view('clientes.index', compact(['clientes']));
+        $texto = "Clientes:";
+        return view('clientes.index',
+        ['clientes'=>$clientes, 'titulo'=>$texto]);
+        
+        /*
+        ->with('clientes', $clientes)
+        ->with('titulo', "Todos os clientes");
+        */
+        //return view('clientes.index', compact(['clientes']));
     }
 
     /**
